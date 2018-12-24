@@ -12,10 +12,13 @@ async def main(connection):
         i = app.terminal_windows.index(window_with_tab_to_move)
         n = len(app.terminal_windows)
         j = (i + delta) % n
+
         if i == j:
-            return
-        window = app.terminal_windows[j]
-        await window.async_set_tabs(window.tabs + [tab_to_move])
+            window = await iterm2.Window.async_create(connection)
+            await window.async_set_tabs([tab_to_move])
+        else:
+            window = app.terminal_windows[j]
+            await window.async_set_tabs(window.tabs + [tab_to_move])
 
     async def move_current_tab_to_next_window():
         await move_current_tab_by_n_windows(1)
