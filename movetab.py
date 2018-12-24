@@ -15,6 +15,7 @@ async def main(connection):
 
         if i == j:
             window = await iterm2.Window.async_create(connection)
+            await window.async_set_fullscreen(False)
             await window.async_set_tabs([tab_to_move])
         else:
             window = app.terminal_windows[j]
