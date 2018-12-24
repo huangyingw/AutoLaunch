@@ -1,10 +1,18 @@
 [commit]
-	message = n
+    message = n
 [merge]
-	allow = true
+    allow = true
 [vrun]
-	silent = false
-	async = false
+    silent = false
+    async = false
 [deploy]
-	host = localhost
-	path = ~/myproject/../../Library/Application
+    host = localhost
+    path = ~/myproject/../../Library/Application
+[remote "origin"]
+    url = git@github.com:huangyingw/AutoLaunch.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+[push]
+    remote = origin
+[branch "dev"]
+    remote = origin
+    merge = refs/heads/dev
