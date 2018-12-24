@@ -1,0 +1,7 @@
+"./.git/config"
+"./.git/info/exclude"
+"./.gitconfig"
+"./includefile.conf"
+"./movetab.py"
+"./prunefile.conf"
+"./prunefix.conf"
